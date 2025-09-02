@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback } from 'react';
+import { useState, useEffect, useRef, useCallback, type JSX } from 'react';
 import viteLogo from '../src/assets/logo jc.png';
 import imagem01 from '../src/assets/imagem01.jpeg';
 import imagem03 from '../src/assets/imagem03.jpeg';
@@ -11,11 +11,11 @@ import {
   FaCircle,
   FaBandAid,
   FaHeartbeat,
-  FaUmbrella,
+
   FaLeaf,
   FaWind,
   FaMedkit,
-   FaTimes, 
+  
   FaPhone, 
   FaInstagram, 
   FaWhatsapp, 
@@ -23,14 +23,14 @@ import {
   FaEnvelope,
   FaSpa, 
   FaSyringe, 
-  FaTint, 
+
   FaWater, 
   FaFire, 
   FaHands, 
   FaClinicMedical, 
   FaAward, 
   FaUserMd,
-  FaCamera 
+
 } from 'react-icons/fa';
 import videoBackground from './assets/jana01.mp4';
 import videoPoster from './assets/logo jc.jpeg';
@@ -53,11 +53,7 @@ interface Benefit {
   icon: JSX.Element;
 }
 
-interface GalleryItem {
-  id: number;
-  title: string;
-  description: string;
-}
+
 
 // Dados estáticos (poderiam ser movidos para arquivos separados)
 const MENU_ITEMS: MenuItem[] = [
