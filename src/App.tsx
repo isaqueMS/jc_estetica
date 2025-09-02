@@ -6,16 +6,13 @@ import imagem04 from '../src/assets/imagem04.jpeg';
 import jana from "../src/assets/jana.jpeg";
 import './App.css';
 import { 
-
   FaTree, 
   FaCircle,
   FaBandAid,
   FaHeartbeat,
-
   FaLeaf,
   FaWind,
   FaMedkit,
-  
   FaPhone, 
   FaInstagram, 
   FaWhatsapp, 
@@ -23,14 +20,12 @@ import {
   FaEnvelope,
   FaSpa, 
   FaSyringe, 
-
   FaWater, 
   FaFire, 
   FaHands, 
   FaClinicMedical, 
   FaAward, 
   FaUserMd,
-
 } from 'react-icons/fa';
 import videoBackground from './assets/jana01.mp4';
 import videoPoster from './assets/logo jc.jpeg';
@@ -53,8 +48,6 @@ interface Benefit {
   icon: JSX.Element;
 }
 
-
-
 // Dados estáticos (poderiam ser movidos para arquivos separados)
 const MENU_ITEMS: MenuItem[] = [
   { id: 'inicio', label: 'Início' },
@@ -66,8 +59,6 @@ const MENU_ITEMS: MenuItem[] = [
 ];
 
 const SERVICES: Service[] = [
-
-
   { name: 'Massagem Relaxante', description: 'Alívio de tensões e relaxamento muscular profundo', icon: <FaHands /> },
   { name: 'Liberação Miofascial', description: 'Liberação de tensões na fáscia muscular', icon: <FaWind /> },
   { name: 'Bambuterapia', description: 'Massagem terapêutica com bambus', icon: <FaTree /> },
@@ -81,7 +72,6 @@ const SERVICES: Service[] = [
   { name: 'Acupuntura', description: 'Estímulo de pontos energéticos corporais', icon: <FaLeaf /> },
   { name: 'Drenagem Linfática', description: 'Redução de inchaço e melhora da circulação', icon: <FaWater /> },
   { name: 'Limpeza de Pele', description: 'Profunda e suave para todos os tipos de pele', icon: <FaSpa /> },
-
 ];
 
 const BENEFITS: Benefit[] = [
@@ -106,14 +96,8 @@ const galleryItems = [
   { id: 1, title: 'Resultado 1', description: 'Antes e depois do tratamento', image: imagem01 },
   { id: 3, title: 'Resultado 2', description: 'Antes e depois do tratamento', image: imagem03 },
   { id: 4, title: 'Resultado 3', description: 'Antes e depois do tratamento', image: imagem04 },
-
 ];
 
-
-const galleryItems1 = [
-  { id: 1, title: 'jana 1', description: 'Janai Conceição', image: imagem01 },
-
-]
 // Componente Header separado
 const Header = ({ 
   scrollProgress, 
@@ -128,14 +112,12 @@ const Header = ({
   setIsMenuOpen: (isOpen: boolean) => void;
   scrollToSection: (sectionId: string, index: number) => void;
 }) => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
   const menuRef = useRef<HTMLDivElement>(null);
 
   // Detectar mudança de tamanho de tela
   useEffect(() => {
     const handleResize = () => {
       const mobile = window.innerWidth < 768;
-      setIsMobile(mobile);
       if (!mobile && isMenuOpen) {
         setIsMenuOpen(false);
       }
@@ -166,10 +148,7 @@ const Header = ({
     backdropFilter: scrollProgress > 0.5 ? 'blur(8px)' : 'none'
   };
 
-  const textColor = scrollProgress > 0.5 ? '##2c0414' : '#f8e6e9';
-  const logoFilter = scrollProgress > 0.5 ? 
-    'invert(0) sepia(100%) saturate(1000%) hue-rotate(320deg)' : 
-    'brightness(0) invert(1)';
+  const textColor = scrollProgress > 0.5 ? '#2c0414' : '#f8e6e9';
 
   return (
     <header className="header" style={headerStyle}>
@@ -179,7 +158,6 @@ const Header = ({
             src={viteLogo} 
             alt="Logo JC Estética" 
             className="logo-icon" 
-            style={{}} 
           />
         </div>
         
@@ -232,7 +210,7 @@ const HeroSection = ({
   videoError, 
   setVideoError 
 }: { 
-  setSectionRef: (index: number, ref: HTMLDivElement | null) => void;
+  setSectionRef: (index: number, ref: HTMLElement | null) => void;
   scrollToSection: (sectionId: string, index: number) => void;
   videoError: boolean;
   setVideoError: (error: boolean) => void;
@@ -290,7 +268,7 @@ const ServicesSection = ({
   activeSection, 
   scrollToSection 
 }: { 
-  setSectionRef: (index: number, ref: HTMLDivElement | null) => void;
+  setSectionRef: (index: number, ref: HTMLElement | null) => void;
   activeSection: string;
   scrollToSection: (sectionId: string, index: number) => void;
 }) => {
@@ -333,7 +311,7 @@ const BenefitsSection = ({
   setSectionRef, 
   activeSection 
 }: { 
-  setSectionRef: (index: number, ref: HTMLDivElement | null) => void;
+  setSectionRef: (index: number, ref: HTMLElement | null) => void;
   activeSection: string;
 }) => {
   return (
@@ -369,7 +347,7 @@ const GallerySection = ({
   setSectionRef, 
   activeSection 
 }: { 
-  setSectionRef: (index: number, ref: HTMLDivElement | null) => void;
+  setSectionRef: (index: number, ref: HTMLElement | null) => void;
   activeSection: string;
 }) => {
   return (
@@ -403,12 +381,11 @@ const GallerySection = ({
 };
 
 // Componente Sobre
-// Componente Sobre
 const AboutSection = ({ 
   setSectionRef, 
   activeSection 
 }: { 
-  setSectionRef: (index: number, ref: HTMLDivElement | null) => void;
+  setSectionRef: (index: number, ref: HTMLElement | null) => void;
   activeSection: string;
 }) => {
   return (
@@ -463,7 +440,7 @@ const ContactSection = ({
   setSectionRef, 
   activeSection 
 }: { 
-  setSectionRef: (index: number, ref: HTMLDivElement | null) => void;
+  setSectionRef: (index: number, ref: HTMLElement | null) => void;
   activeSection: string;
 }) => {
   const handleSubmit = (e: React.FormEvent) => {
@@ -594,12 +571,12 @@ function App() {
   const [activeSection, setActiveSection] = useState('inicio');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [videoError, setVideoError] = useState(false);
-  const sections = useRef<(HTMLDivElement | null)[]>([]);
+  const sections = useRef<(HTMLElement | null)[]>([]);
   const isScrolling = useRef(false);
   const scrollTimeout = useRef<number | null>(null);
 
   // Configura as referências das seções
-  const setSectionRef = useCallback((index: number, ref: HTMLDivElement | null) => {
+  const setSectionRef = useCallback((index: number, ref: HTMLElement | null) => {
     sections.current[index] = ref;
   }, []);
 
