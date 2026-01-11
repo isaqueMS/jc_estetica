@@ -258,7 +258,7 @@ const App: React.FC = () => {
                     <div className="font-serif italic text-3xl md:text-4xl text-[#1a0f12] tracking-tighter">Janai Conceição</div>
                     <div className="hidden sm:block w-12 h-px bg-[#c5a059]/30"></div>
                     <div className="text-[8px] md:text-[10px] uppercase tracking-[0.3em] text-[#c5a059] font-bold">
-                      Master Esteticista
+                      Fisioterapeuta Esteticista
                     </div>
                   </div>
                 </div>
