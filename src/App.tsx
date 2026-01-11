@@ -3,7 +3,7 @@ import viteLogo from '../src/assets/logo jc.png';
 import imagem01 from '../src/assets/imagem01.jpeg';
 import imagem03 from '../src/assets/imagem03.jpeg';
 import imagem04 from '../src/assets/imagem04.jpeg';
-import jana from "../src/assets/jana.jpeg";
+import jana from "../src/assets/janai.jpeg";
 import './App.css';
 import { 
   FaTree, 
