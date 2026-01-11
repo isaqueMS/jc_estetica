@@ -1,13 +1,74 @@
-<!doctype html>
-<html lang="en">
+
+<!DOCTYPE html>
+<html lang="pt-BR">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/src/assets/logo jc.jpeg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JC Estética</title>
-  </head>
+    <title>JC Estética | Advanced Wellness</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <style>
+      :root {
+        --color-gold: #c5a059;
+        --color-taupe: #4a443f;
+        --color-cream: #f9f7f2;
+        --color-deep: #1a0f12;
+      }
+      body {
+        font-family: 'Montserrat', sans-serif;
+        background-color: var(--color-cream);
+        color: var(--color-taupe);
+      }
+      h1, h2, h3, .font-serif {
+        font-family: 'Tenor Sans', sans-serif;
+        letter-spacing: 0.05em;
+      }
+      .luxury-text-gradient {
+        background: linear-gradient(to right, #c5a059, #e9d5a1);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .btn-gold {
+        position: relative;
+        overflow: hidden;
+        border: 1px solid var(--color-gold);
+        color: var(--color-gold);
+        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      }
+      .btn-gold:hover {
+        color: white;
+        background-color: var(--color-gold);
+      }
+      .reveal {
+        opacity: 0;
+        transform: translateY(30px);
+        transition: all 0.8s ease-out;
+      }
+      .reveal.active {
+        opacity: 1;
+        transform: translateY(0);
+      }
+      .image-mask {
+        clip-path: inset(0 0 0 0 round 100px 0 100px 0);
+      }
+      ::-webkit-scrollbar { width: 5px; }
+      ::-webkit-scrollbar-track { background: var(--color-cream); }
+      ::-webkit-scrollbar-thumb { background: var(--color-gold); }
+    </style>
+    <script type="importmap">
+    {
+      "imports": {
+        "react-dom/": "https://esm.sh/react-dom@^19.2.3/",
+        "react/": "https://esm.sh/react@^19.2.3/",
+        "react": "https://esm.sh/react@^19.2.3",
+        "react-icons/": "https://esm.sh/react-icons@^5.5.0/"
+      }
+    }
+    </script>
+  <link rel="stylesheet" href="/index.css">
+</head>
   <body>
     <div id="root"></div>
-    <script type="module" src="/src/main.tsx"></script>
+    <script type="module" src="/index.tsx"></script>
   </body>
 </html>
