@@ -4,54 +4,67 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>JC Estética | Advanced Wellness</title>
+    <title>JC Estética | Advanced Wellness & Post-Op</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Montserrat:wght@200;300;400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Tenor+Sans&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
     <style>
       :root {
         --color-gold: #c5a059;
-        --color-taupe: #4a443f;
-        --color-cream: #f9f7f2;
         --color-deep: #1a0f12;
+        --color-cream: #f9f7f2;
       }
       body {
         font-family: 'Montserrat', sans-serif;
         background-color: var(--color-cream);
-        color: var(--color-taupe);
+        color: #333;
+        overflow-x: hidden;
       }
       h1, h2, h3, .font-serif {
         font-family: 'Tenor Sans', sans-serif;
         letter-spacing: 0.05em;
       }
-      .luxury-text-gradient {
-        background: linear-gradient(to right, #c5a059, #e9d5a1);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
+      
+      /* Skeleton Animation */
+      @keyframes skeleton-pulse {
+        0% { background-color: #f0f0f0; }
+        50% { background-color: #f9f7f2; }
+        100% { background-color: #f0f0f0; }
       }
-      .btn-gold {
-        position: relative;
-        overflow: hidden;
-        border: 1px solid var(--color-gold);
-        color: var(--color-gold);
-        transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+      .skeleton {
+        animation: skeleton-pulse 1.8s ease-in-out infinite;
       }
-      .btn-gold:hover {
-        color: white;
-        background-color: var(--color-gold);
+      .skeleton-dark {
+        background-color: #2a1f22;
+        animation: skeleton-pulse 1.8s ease-in-out infinite;
+        opacity: 0.1;
       }
+
+      /* Luxury Reveal */
       .reveal {
         opacity: 0;
         transform: translateY(30px);
-        transition: all 0.8s ease-out;
+        transition: all 1.2s cubic-bezier(0.22, 1, 0.36, 1);
       }
       .reveal.active {
         opacity: 1;
         transform: translateY(0);
       }
-      .image-mask {
-        clip-path: inset(0 0 0 0 round 100px 0 100px 0);
+
+      /* Signature Button Animation */
+      @keyframes pulse-gold {
+        0% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0.4); }
+        70% { box-shadow: 0 0 0 20px rgba(197, 160, 89, 0); }
+        100% { box-shadow: 0 0 0 0 rgba(197, 160, 89, 0); }
       }
-      ::-webkit-scrollbar { width: 5px; }
+      .btn-luxury-pulse {
+        animation: pulse-gold 2.5s infinite;
+      }
+
+      .image-mask {
+        clip-path: inset(0 0 0 0 round 150px 0 150px 0);
+      }
+
+      ::-webkit-scrollbar { width: 4px; }
       ::-webkit-scrollbar-track { background: var(--color-cream); }
       ::-webkit-scrollbar-thumb { background: var(--color-gold); }
     </style>
